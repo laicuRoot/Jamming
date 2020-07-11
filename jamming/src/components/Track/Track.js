@@ -5,7 +5,10 @@ export class Track extends React.Component{
   constructor(props){
     super(props);
     this.renderAction = this.renderAction.bind(this);
+    this.addTrack = this.addTrack.bind(this);
+
   }
+
   renderAction(){
     if(this.props.isRemoval){
       return <button>-</button>
@@ -13,6 +16,11 @@ export class Track extends React.Component{
       return <button>+</button>
     }
   }
+
+  addTrack(){
+    this.props.onAdd(this.props.track);
+  }
+  
   render(){
     return(
       <div className="Track">
