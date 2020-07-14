@@ -2,7 +2,7 @@ let accessToken;
 const clientID = '0853a1432982471cb6b88ab9bdef9158';
 const redirectURI = ''
 
-const Spotify = {
+export const Spotify = {
   getAccessToken(){
     if(accessToken){
       return accessToken
@@ -47,5 +47,3 @@ const Spotify = {
     })
   }
 };
-
-export default Spotify;
