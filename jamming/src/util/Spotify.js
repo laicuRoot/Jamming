@@ -1,6 +1,6 @@
 let accessToken;
 const clientID = '0853a1432982471cb6b88ab9bdef9158';
-const redirectURI = ''
+const redirectURI = 'http://localhost:3000/'
 
 export const Spotify = {
   getAccessToken(){
@@ -40,8 +40,8 @@ export const Spotify = {
       return {
         id: track.id,
         name: track.name,
-        artist: track.artist[0].name,
-        album: track.album[0].name,
+        artist: track.artists[0].name,
+        album: track.album.name,
         uri: track.uri
       }
     })
@@ -55,7 +55,7 @@ export const Spotify = {
     {
       Authorization: `Bearer ${accessToken}`
     };
-    const userID;
+    let userID = ''
     const response = await fetch('https://api.spotify.com/v1/me',
       {
         headers: headers
