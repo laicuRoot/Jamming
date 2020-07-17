@@ -62,6 +62,7 @@ export const Spotify = {
       });
     const jsonResponse = await response.json();
     userID = jsonResponse.id;
+
     const response_1 = await fetch(`https://api.spotify.com/v1/users/${userID}/playlists`,
       {
         headers: headers,
