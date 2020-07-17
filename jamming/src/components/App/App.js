@@ -12,7 +12,8 @@ class App extends React.Component{
       searchResults: 
       [],
       playListName: 'playList 1',
-      playlistTracks: []
+      playlistTracks: [],
+      playlistList: []
     };
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
