@@ -70,7 +70,7 @@ export const Spotify = {
       {
         headers: headers,
         method: 'POST',
-        mode:"no-cors",
+        mode:'no-cors',
         body: JSON.stringify({ name: name })
       });
     const jsonResponse_1 = await response_1.json();
