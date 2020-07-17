@@ -57,13 +57,20 @@ export const Spotify = {
       Authorization: `Bearer ${accessToken}`
     };
 
-    const userId = Spotify.getUserId();
+    let userId;
+    // const response = await fetch('https://api.spotify.com/v1/me',{
+    //   headers:{
+    //     Authorization:`Bearer ${accessToken}`
+    //   }
+    // });
+    // const jsonResponse = await response.json();
+    userId = Spotify.getUserId();
 
     const response_1 = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`,
       {
         headers: headers,
         method: 'POST',
-        mode: 'no-cors',
+        mode:"no-cors",
         body: JSON.stringify({ name: name })
       });
     const jsonResponse_1 = await response_1.json();
@@ -72,25 +79,24 @@ export const Spotify = {
       {
         headers: headers,
         method: 'POST',
-        mode: 'no-cors',
         body: JSON.stringify({ uris: trackUris })
       });
   },
-  async getUserId(){
-    const accessToken = Spotify.getAccessToken();
-    if(userId){
-      return userId;
-    } else {
-      const response = await fetch(`https://api.spotify.com/v1/me`,
-        {
-          headers:
+    async getUserId(){
+      const accessToken = Spotify.getAccessToken();
+      if(userId){
+        return userId;
+      } else {
+        const response = await fetch(`https://api.spotify.com/v1/me`,
           {
-            Authorization: `Bearer ${accessToken}`,
-          }
-        });
-      const jsonResponse = await response.json();
-      console.log(jsonResponse.id)
-      return jsonResponse.id;
+            headers:
+            {
+              Authorization: `Bearer ${accessToken}`,
+            }
+          });
+        const jsonResponse = await response.json();
+        console.log(jsonResponse.id)
+        return jsonResponse.id;
+      }
     }
-  }
 };
