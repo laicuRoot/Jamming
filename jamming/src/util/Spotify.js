@@ -1,5 +1,5 @@
 let accessToken;
-let userId;
+
 const clientID = '0853a1432982471cb6b88ab9bdef9158';
 const redirectURI = 'http://localhost:3000/'
 
@@ -78,18 +78,15 @@ export const Spotify = {
   },
   async getUserId(){
     const accessToken = Spotify.getAccessToken();
-    if(userId){
-      return userId;
-    } else {
-      const response = await fetch(`https://api.spotify.com/v1/me`,
+    const response = await fetch(`https://api.spotify.com/v1/me`,
+      {
+        headers:
         {
-          headers:
-          {
-            Authorization: `Bearer ${accessToken}`,
-          }
-        });
-      const jsonResponse = await response.json();
-      return jsonResponse.id;
-    }
+          Authorization: `Bearer ${accessToken}`,
+        }
+      });
+    const jsonResponse = await response.json();
+    console.log(jsonResponse.id)
+    return jsonResponse.id;
   }
 };
