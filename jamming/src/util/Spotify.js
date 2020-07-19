@@ -1,5 +1,5 @@
 let accessToken;
-let userId;
+let userid;
 const clientID = '0853a1432982471cb6b88ab9bdef9158';
 const redirectURI = 'http://localhost:3000/'
 
@@ -57,20 +57,21 @@ export const Spotify = {
       Authorization: `Bearer ${accessToken}`
     };
 
-    let userId;
-    // const response = await fetch('https://api.spotify.com/v1/me',{
-    //   headers:{
-    //     Authorization:`Bearer ${accessToken}`
+    let userId = Spotify.getUserId();
+
+    // const response = await fetch('https://api.spotify.com/v1/me', {
+    //   headers: {
+    //     Authorization: `Bearer ${accessToken}`
     //   }
-    // });
+    // }
+    // );
     // const jsonResponse = await response.json();
-    userId = Spotify.getUserId();
+    // userId = jsonResponse.id;
 
     const response_1 = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`,
       {
         headers: headers,
         method: 'POST',
-        mode:'no-cors',
         body: JSON.stringify({ name: name })
       });
     const jsonResponse_1 = await response_1.json();
@@ -82,21 +83,23 @@ export const Spotify = {
         body: JSON.stringify({ uris: trackUris })
       });
   },
-    async getUserId(){
-      const accessToken = Spotify.getAccessToken();
-      if(userId){
-        return userId;
-      } else {
-        const response = await fetch(`https://api.spotify.com/v1/me`,
-          {
-            headers:
-            {
-              Authorization: `Bearer ${accessToken}`,
-            }
-          });
-        const jsonResponse = await response.json();
-        console.log(jsonResponse.id)
-        return jsonResponse.id;
-      }
+  async getUserId(){
+    const accessToken = Spotify.getAccessToken();
+    if(userid){
+      return fetch(`https://api.spotify.com/v1/users/${userid}`,
+      {
+        headers:{Authorization: `Bearer ${accessToken}`},
+      })
+    } else {
+      const response = await fetch('https://api.spotify.com/v1/me',{
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        }
+      })
+      const jsonRes = await response.json()
+      userid = jsonRes.id
+      return userid
     }
-};
+  }
+    
+}
