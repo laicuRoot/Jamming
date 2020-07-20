@@ -61,10 +61,8 @@ export const Spotify = {
         })
     } else {
       const response = await fetch('https://api.spotify.com/v1/me', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-        mode: 'no-cors'
+        headers: {Authorization: `Bearer ${accessToken}`},
+        mode:'no-cors'
       })
       const jsonRes = await response.json()
       userid = jsonRes.id
@@ -73,7 +71,7 @@ export const Spotify = {
     }
   },
   async savePlaylist(name,trackUris){
-    console.log(`This is the USER ID in savePlayList method ${Spotify.getUserId()}`)
+    // console.log(`This is the USER ID in savePlayList method ${Spotify.getUserId()}`)
     if(!name || !trackUris.length){
       return;
     }
@@ -83,6 +81,7 @@ export const Spotify = {
       Authorization: `Bearer ${accessToken}`
     };
 
+    // let userID;
 
     // const response = await fetch('https://api.spotify.com/v1/me', {
     //   headers: {
@@ -91,23 +90,23 @@ export const Spotify = {
     // }
     // );
     // const jsonResponse = await response.json();
-    // userId = jsonResponse.id;
+    // userID = jsonResponse.id;
 
-    const response_1 = await fetch(`https://api.spotify.com/v1/users/${Spotify.getUserId()}/playlists`,
+
+    const response_1 = await fetch(`https://api.spotify.com/v1/users/${userid}/playlists`,
       {
-        headers: headers,
         method: 'POST',
-        mode:'no-cors',
-        body: JSON.stringify({ name: name })
+        headers:{Authorization:`Bearer ${accessToken}`},
+        body: JSON.stringify({ name: name }),
       });
+
     const jsonResponse_1 = await response_1.json();
     const playlistId = jsonResponse_1.id;
-    return fetch(`https://api.spotify.com/v1/users/${Spotify.getUserId()}/playlists/${playlistId}/tracks`,
+    return fetch(`https://api.spotify.com/v1/users/${userid}/playlists/${playlistId}/tracks`,
       {
         headers: headers,
         method: 'POST',
-        mode:'no-cors',
-        body: JSON.stringify({ uris: trackUris })
+        body: JSON.stringify({ uris: trackUris }),
       });
   }
 }
