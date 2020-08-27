@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="">
-    <img width="500px" height="250px" alt="openweather logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/folder_920_201707260845-1.png" />
+    <img width="300px" height="200px" alt="openweather logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/folder_920_201707260845-1.png" />
 </a>
 
 <br />
