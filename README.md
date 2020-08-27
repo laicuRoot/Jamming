@@ -1,3 +1,18 @@
+<div align="center">
+
+<a href="">
+    <img width="400px" height="300px" alt="openweather logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/folder_920_201707260845-1.png" />
+</a>
+
+<br />
+<br />
+
+![React Version](https://img.shields.io/badge/react-16.3-blue.svg?longCache=true&style=flat&logo=react)
+![Npm Version](https://img.shields.io/badge/npm->=6.0-brightgreen.svg?longCache=true&style=flat&logo=npm)
+
+
+</div>
+
 # Jamming
  Spotify API React Project
 
