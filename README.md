@@ -14,7 +14,7 @@
 </div>
 
 # Jamming
- Spotify API React Project
+> Spotify API React Project
 
 ## Getting Started
 
