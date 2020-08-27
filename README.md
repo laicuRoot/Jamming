@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="">
-    <img width="300px" height="200px" alt="openweather logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/folder_920_201707260845-1.png" />
+    <img width="300px" height="200px" alt="openweather logo" src="https://imgix.bustle.com/uploads/image/2018/10/5/32a337c4-a6e9-4c0e-b512-010bb98e0049-spotify-logo.png?w=1020&h=574&fit=crop&crop=faces&auto=format%2Ccompress&cs=srgb&q=70" />
 </a>
 
 <br />
@@ -16,23 +16,47 @@
 # Jamming
  Spotify API React Project
 
-## How to run the project:
+## Getting Started
+
+### Download or clone the project 
 
 Download the project using the **`Code`** button above. You have two options: 
   
   - Download it as zip file
   - Open it with GitHub Desktop
 
-To start the project once is dowloaded run in the **terminal** the following script: 
+### Install Project Dependencies
 
-### 1. run "npm install"
+While in the root directory, in order to install the dependencies, please run the following command:
 
-### 2. run "npm start"
+```
+npm install
+```
 
-If you don't want to wait for `npm install` to finish for every directory, you can copy the `node_modules` directory from one to another.
+### Run the project
+
+While in the root directory, please run the following command:
+
+```
+npm start
+```
 
 It runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+## API's and components 
+
+In this project we have 1 main API: 
+
+ - Spotify API 
+
+Main components: 
+
+- (PENDING)
+ 
+Spotify API documentation: https://developer.spotify.com/documentation/
+ 
+Project created by **LaicuRoot**.
