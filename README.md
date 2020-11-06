@@ -16,6 +16,8 @@
 # Jamming
 > Spotify API React Project
 
+This project consists in a Web-App built using React and Spotify API that allows you to log-in in your Spotify account and create PlayList in the browser that you can upload in your Spotify app. 
+
 ## Getting Started
 
 ### Download or clone the project 
@@ -55,7 +57,15 @@ In this project we have 1 main API:
 
 Main components: 
 
-- (PENDING)
+- Track & TackList 
+- PlayList 
+- SearchBar
+- SearchResults
+- SearchBar
+
+and one main utility JS file: 
+
+- Spotify JS
  
 Spotify API documentation: https://developer.spotify.com/documentation/
  
